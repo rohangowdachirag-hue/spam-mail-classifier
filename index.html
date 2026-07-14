@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A premium, frontend-only web-based Spam Mail Classifier that trains a Multinomial Naive Bayes model directly in your browser. Check messages for spam with high precision.">
+    <title>SpamAI — Naive Bayes Mail Classifier</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" id="navLogo">SpamAI</a>
+            <nav class="nav-links">
+                <a href="#classifier-section" id="linkClassifier">Classifier</a>
+                <a href="#how-it-works-section" id="linkHowItWorks">How it Works</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-container">
+                <h1 class="hero-title">Is it spam?</h1>
+                <h2 class="hero-subtitle">Let Naive Bayes decide.</h2>
+                <p class="hero-description">A simple machine learning classifier trained directly in your browser.</p>
+            </div>
+        </section>
+
+        <!-- Classifier Section -->
+        <section id="classifier-section" class="classifier-section">
+            <div class="card-container">
+                <div class="classifier-header">
+                    <h3 class="section-title">Check your message</h3>
+                    <p class="section-desc">Paste an email or message below to classify it.</p>
+                </div>
+
+                <div class="classifier-body">
+                    <!-- Status Display -->
+                    <div class="status-container" id="statusContainer">
+                        <span class="status-dot training" id="statusDot"></span>
+                        <span class="status-text" id="statusText">Training model...</span>
+                    </div>
+
+                    <!-- Input Form -->
+                    <div class="input-wrapper">
+                        <textarea id="messageInput" placeholder="Paste your email or message here..." aria-label="Message to classify"></textarea>
+                        <div class="error-message" id="validationError" aria-live="polite"></div>
+                    </div>
+
+                    <div class="button-group">
+                        <button id="btnClassify" class="btn btn-primary" disabled>Classify</button>
+                        <button id="btnClear" class="btn btn-secondary">Clear</button>
+                    </div>
+                </div>
+
+                <!-- Result Card -->
+                <div class="result-card hidden" id="resultCard" aria-live="polite">
+                    <div class="result-badge" id="resultBadge">HAM</div>
+                    <h4 class="result-heading" id="resultHeading">Looks safe.</h4>
+                    <p class="result-confidence" id="resultConfidence"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works-section" class="how-it-works-section">
+            <h3 class="how-title">Simple machine learning.<br>Right in your browser.</h3>
+            <div class="cards-grid">
+                <!-- Card 1 -->
+                <div class="info-card">
+                    <div class="card-number">01</div>
+                    <h4 class="card-title">Learn</h4>
+                    <p class="card-text">Naive Bayes learns word patterns from the spam and ham dataset.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="info-card">
+                    <div class="card-number">02</div>
+                    <h4 class="card-title">Calculate</h4>
+                    <p class="card-text">The classifier calculates the probability of your message belonging to each class.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="info-card">
+                    <div class="card-number">03</div>
+                    <h4 class="card-title">Predict</h4>
+                    <p class="card-text">The class with the highest probability becomes the prediction.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <span class="footer-left">SpamAI — Naive Bayes Mail Classifier</span>
+            <span class="footer-right">Built with HTML, CSS and JavaScript.</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
